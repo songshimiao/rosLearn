@@ -138,6 +138,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(static_pub src/static_pub.cpp)
+add_executable(static_sub src/static_sub.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -153,6 +154,9 @@ add_executable(static_pub src/static_pub.cpp)
 target_link_libraries(static_pub
   ${catkin_LIBRARIES}
 )
+target_link_libraries(static_sub
+${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##
@@ -163,10 +167,10 @@ target_link_libraries(static_pub
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# catkin_install_python(PROGRAMS
-#   scripts/my_python_script
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+catkin_install_python(PROGRAMS
+  scripts/static_pub_p.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Mark executables for installation
 ## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html
