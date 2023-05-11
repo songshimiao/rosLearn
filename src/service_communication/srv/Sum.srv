@@ -1,0 +1,7 @@
+# Client need 2 numbers
+int32 num1
+int32 num2
+
+---
+# Server
+int32 sum
