@@ -5,7 +5,7 @@
 #include "tf2/LinearMath/Quaternion.h"
 
 // 功能：
-// -- 需要订阅乌龟的位姿信息
+// -- 需要订阅 robot 的位姿信息
 // -- 转换成相对于窗体的坐标关系并发布
 // ---- topic : /turtle1/pose
 // ---- message : /turtlesim/Pose
