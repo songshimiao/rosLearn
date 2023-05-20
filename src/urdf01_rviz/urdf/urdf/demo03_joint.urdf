@@ -1,0 +1,59 @@
+<robot name="demo03_joint">
+
+    <link name="parent_link">
+        <!-- <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial> -->
+        <visual name="parent">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.5 0.2 0.1"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0.0 0.0 1.0 0.7"/>
+                <!-- <texture filename=""/> -->
+            </material>
+        </visual>
+        <!-- <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.0 0.0 0.0"/>
+            </geometry>
+        </collision> -->
+    </link>
+
+    <link name="child_link">
+        <!-- <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial> -->
+        <visual name="child">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.05 0.05"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1.0 0.0 0.0 0.7"/>
+                <!-- <texture filename=""/> -->
+            </material>
+        </visual>
+        <!-- <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.0 0.0 0.0"/>
+            </geometry>
+        </collision> -->
+    </link>
+
+    <joint name="clild2parent" type="continuous">
+        <origin xyz="0.2 0.0 0.15" rpy="0.0 0.0 0.0"/>
+        <parent link="parent_link"/>
+        <child link="child_link"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <!-- <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/> -->
+    </joint>
+
+</robot>
