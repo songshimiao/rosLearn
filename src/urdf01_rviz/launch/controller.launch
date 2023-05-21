@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+    <param name="robot_description" command="$(find xacro)/xacro $(find urdf01_rviz)/urdf/xacro/xacro_demo02.urdf.xacro"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find urdf01_rviz)/config/xacro_demo02.rviz"/>    
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" output="screen"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
+    
+    <node name="arbotix_controller" pkg="arbotix_python" type="arbotix_driver"  output="screen">
+        <rosparam command="load" file="$(find urdf01_rviz)/config/controller.yaml"/>
+        <param name="sim" value="true"/>
+        
+    </node>
+    
+
+</launch>
